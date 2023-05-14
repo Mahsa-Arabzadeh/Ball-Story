@@ -10,13 +10,25 @@ body{
     display: flex;
     justify-content: center;
 }
+/* border to container background/width/height */
 .container{
     margin-top: 30px;
-    background-color: rgb(255, 208, 107);
-    width: 900px;
+    background: linear-gradient(rgb(216, 90, 255), black);
+    width: 920px;
     height: 550px;
+    animation-name: container-border;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
 }
-/* style to container */
+@keyframes container-border{
+    0%{
+        box-shadow: -3px -2px 20px 2px rgb(5, 254, 212);
+    }
+    100%{
+        box-shadow: -3px -2px 20px 5px rgb(247, 17, 255);
+    }
+}
+/* style to main border */
 .main {
     position: relative;
     top: 40px;
@@ -27,7 +39,7 @@ body{
     border-radius: 5px;
     overflow: hidden;
 }
-/* container after happen this styles */
+/* main after happen this styles */
 .main::after{
     content: '';
     position: absolute;
@@ -37,7 +49,7 @@ body{
     animation: animate 4s linear infinite;
     animation-delay: -2s;
 }
-/* container befor happen this styles */
+/* main befor happen this styles */
 .main::before{
     content: '';
     position: absolute;
